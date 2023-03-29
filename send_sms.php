@@ -3,8 +3,11 @@
 require_once 'vendor/autoload.php'; // Load Africa's Talking SDK
 
 // Setting my credentials
-$username = "bulk_sms_sender";
-$apiKey = "614047be2aa4f222277a461bec466786cb367d6c89f4cfcc40f1185af57efc4f";
+// $username = "bulk_sms_sender";
+// $apiKey = "614047be2aa4f222277a461bec466786cb367d6c89f4cfcc40f1185af57efc4f";
+
+$username = "sandbox";
+$apiKey = 'b35696cd066d2691ca46ac0dad6efc7fe676d1cbc03901976e95f63ce83ce2a2';
 
 // Initialize the SDK
 $AT = new AfricasTalking\SDK\AfricasTalking($username, $apiKey);
@@ -29,7 +32,7 @@ if ($sendTo === 'single') {
         // Display success message and button to navigate back to home screen
         if ($result['status'] === 'success') {
             echo "<p>Message sent successfully!</p>";
-            echo "<button onclick=\"window.location.href='index.php'\">Back to Home</button>";
+            echo "<button onclick=\"window.location.href='sendSms.php'\">Back to Home</button>";
         } else {
             echo "<p>Error sending message: " . $result['data']['message'] . "</p>";
         }
